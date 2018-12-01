@@ -15,6 +15,6 @@ func DoOnEachLine(pathToFile string, doer func(line string)) {
 
 	scanner := bufio.NewScanner(fileHandler)
 	for scanner.Scan() {
-		doer(scanner.Text()) 
+		go doer(scanner.Text())
 	}
 }
